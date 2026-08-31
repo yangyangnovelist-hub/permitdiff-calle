@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -67,13 +67,13 @@
     <section class="hero"><div><h1>Call only when the record needs reconciliation.</h1><p class="dek">Fresh portal facts should stay digital. Stale or conflicting records earn one bounded phone check—never an unofficial overwrite.</p></div><aside class="doctrine"><strong>Exceptions, not campaigns.</strong><small>Fresh + consistent → zero call<br>Stale or conflicting → one reviewable call</small></aside></section>
     <section class="workspace">
       <article class="panel" data-index="01 / PORTAL">
-        <div class="label">Frozen portal snapshot</div><h2 id="permit-number"></h2>
+        <div class="label">Frozen portal snapshot</div><h2 id="permit-number">Loading permit…</h2>
         <div class="record"><div>Jurisdiction</div><div id="jurisdiction"></div><div>Portal status</div><div id="portal-status"></div><div>Record age</div><div class="stale" id="record-age">120 hours</div><div>Portal note</div><div id="portal-note"></div><div>Conflict flags</div><div id="conflicts">none declared</div></div>
-        <div class="scenario-bar"><button id="fresh">Fresh + clean</button><button id="stale" class="active">Stale record</button><button id="conflict">Conflicting record</button></div>
+        <div class="scenario-bar"><button type="button" id="fresh">Fresh + clean</button><button type="button" id="stale" class="active">Stale record</button><button type="button" id="conflict">Conflicting record</button></div>
       </article>
       <article class="panel" data-index="02 / EVIDENCE">
         <div class="phone-card"><div class="label">Phone evidence</div><h2 id="phone-title">Awaiting policy decision</h2><span class="route" id="route">not evaluated</span><div class="evidence-list"><div class="evidence-row"><span>Phone status</span><strong id="phone-status">—</strong></div><div class="evidence-row"><span>Next action</span><strong id="next-action">—</strong></div><div class="evidence-row"><span>Official record</span><strong id="official">unchanged</strong></div></div></div>
-        <div class="actions"><button id="evaluate">Evaluate call policy</button><button data-scenario="verified-match">Verified match</button><button data-scenario="discrepancy">Show discrepancy</button></div>
+        <div class="actions"><button type="button" id="evaluate">Evaluate call policy</button><button type="button" data-scenario="verified-match">Verified match</button><button type="button" data-scenario="discrepancy">Show discrepancy</button></div>
         <div class="stamp" id="stamp">Human review required</div>
       </article>
       <section class="panel boundary" data-index="03 / AUTHORITY">
@@ -84,7 +84,7 @@
     </section>
     <footer>PermitDiff reconciles a frozen portal snapshot with one bounded phone result. It is not a permit authority, filing service, legal adviser, or source of official status.</footer>
   </main>
-  <dialog id="details"><button class="close" id="close">Close</button><div class="label">Inspectable output</div><pre id="json"></pre></dialog>
+  <dialog id="details"><button type="button" class="close" id="close">Close</button><div class="label">Inspectable output</div><pre id="json"></pre></dialog>
   <script>
     const baseRequest=__EXAMPLE__; let request=structuredClone(baseRequest); const $=id=>document.getElementById(id);
     $('permit-number').textContent=request.permit_number; $('jurisdiction').textContent=request.jurisdiction; $('portal-note').textContent=request.portal_note;
