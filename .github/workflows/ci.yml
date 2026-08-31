@@ -27,5 +27,11 @@ jobs:
       - name: Lint
         run: uv run ruff check .
 
+      - name: HTML semantics
+        run: npx -y html-validate@11.11.0 docs/index.html src/permitdiff/operator.html
+
+      - name: Dependency vulnerability audit
+        run: uv export --frozen --no-dev --no-emit-project --format requirements-txt | uvx pip-audit==2.10.1 -r /dev/stdin
+
       - name: Safety regression suite
         run: uv run pytest --cov=src/permitdiff --cov-report=term-missing --cov-fail-under=90
