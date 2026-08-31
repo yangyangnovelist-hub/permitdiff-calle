@@ -1,16 +1,20 @@
 # PermitDiff
 
+[![CI](https://github.com/yangyangnovelist-hub/permitdiff-calle/actions/workflows/ci.yml/badge.svg)](https://github.com/yangyangnovelist-hub/permitdiff-calle/actions/workflows/ci.yml)
+
 **An exception-first permit agent: fresh records trigger no call; stale or conflicting records get
 one evidence-bound CALL-E check that never becomes permit truth.**
 
-[Open the published reconciliation desk](https://yangyangnovelist-hub.github.io/permitdiff-calle/) ·
+[Open the judge console](https://permitdiff.vercel.app/) ·
+[Inspect the published reconciliation desk](https://yangyangnovelist-hub.github.io/permitdiff-calle/) ·
+[Review the merged CALL-E contribution](https://github.com/CALLE-AI/awesome-phone-call-agents/pull/199) ·
 [Inspect the stale-record preview](artifacts/example-preview.json) ·
 [Inspect the deterministic discrepancy](artifacts/example-simulation.json) ·
 [Run the verification suite](TESTING.md)
 
 ## What a judge can verify
 
-1. Open the reconciliation desk, choose **Fresh + clean**, then **Evaluate call policy**. The route
+1. Open the judge console, choose **Fresh + clean**, then **Evaluate call policy**. The route
    becomes `no_call_needed`; no CALL-E request is produced.
 2. Choose **Conflicting record**, then **Show discrepancy**. The phone status changes to
    `correction_required`, a human-review stamp appears, and the official record remains unchanged.
@@ -94,8 +98,11 @@ See [`THREAT_MODEL.md`](THREAT_MODEL.md).
 
 - 53 automated tests pass with 90.95% coverage.
 - Ruff passes with no findings.
+- CI validates HTML semantics and audits the locked runtime dependency graph for known vulnerabilities.
 - Desktop and mobile browser paths have been exercised with headless Chromium.
 - The official CALL-E SDK is invoked at runtime in the HTTP integration test.
+- The implementation is merged into CALL-E's official phone-agent repository through
+  [PR #199](https://github.com/CALLE-AI/awesome-phone-call-agents/pull/199).
 - A public real-provider discrepancy is not claimed until the consented live protocol succeeds.
 
 ## What was built during the event
