@@ -30,6 +30,9 @@ jobs:
       - name: HTML semantics
         run: npx -y html-validate@11.11.0 docs/index.html src/permitdiff/operator.html
 
+      - name: Demo source syntax
+        run: node --check scripts/record-demo.mjs && bash -n scripts/build-demo.sh
+
       - name: Dependency vulnerability audit
         run: uv export --frozen --no-dev --no-emit-project --format requirements-txt | uvx pip-audit==2.10.1 -r /dev/stdin
 

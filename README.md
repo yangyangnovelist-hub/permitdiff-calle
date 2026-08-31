@@ -10,7 +10,8 @@ one evidence-bound CALL-E check that never becomes permit truth.**
 [Review the merged CALL-E contribution](https://github.com/CALLE-AI/awesome-phone-call-agents/pull/199) ·
 [Inspect the stale-record preview](artifacts/example-preview.json) ·
 [Inspect the deterministic discrepancy](artifacts/example-simulation.json) ·
-[Run the verification suite](TESTING.md)
+[Run the verification suite](TESTING.md) ·
+[Join the permission-first pilot](PILOT.md)
 
 ## What a judge can verify
 
@@ -115,5 +116,11 @@ event.
 PermitDiff reuses the official CALL-E SDK and reliability patterns from the author's MIT-licensed
 IncidentBridge project. Its exception policy, domain schema, reconciliation routes, authority
 boundary, UI and evidence contract are independent. See [`THIRD_PARTY.md`](THIRD_PARTY.md).
+
+## Rebuild the judge video
+
+Run `bash scripts/build-demo.sh`. The reproducible, no-call build records the public reviewer
+surfaces, generates subtitle-timed narration, burns English captions, and writes the under-three-
+minute MP4 to `video/build/permitdiff-demo.mp4`. See [`video/DEMO.md`](video/DEMO.md).
 
 MIT licensed.

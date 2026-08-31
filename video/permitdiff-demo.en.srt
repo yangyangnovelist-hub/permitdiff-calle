@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:08,000
+Construction teams already have permit portals. The expensive work begins when a digital record becomes stale or conflicts with the human process.
+
+2
+00:00:08,120 --> 00:00:16,000
+PermitDiff is an exception resolver that knows when not to call and refuses to invent administrative authority.
+
+3
+00:00:16,120 --> 00:00:27,000
+It first freezes the portal snapshot and applies a deterministic no-call gate. Fresh and consistent records finish without constructing a CALL-E request.
+
+4
+00:00:27,120 --> 00:00:38,000
+Only staleness or an explicit conflict makes one authorized, bounded phone check eligible. Every outcome remains tied to the same snapshot.
+
+5
+00:00:38,120 --> 00:00:48,000
+For a fresh record, the correct product outcome is no call needed. Avoiding unnecessary phone work is a visible success state.
+
+6
+00:00:48,120 --> 00:00:59,000
+For a stale record, grounded phone evidence may verify that the office-reported status still matches the frozen portal snapshot.
+
+7
+00:00:59,120 --> 00:01:12,000
+When the phone evidence differs, PermitDiff surfaces a discrepancy for human review. The official record never changes and official confirmation stays required.
+
+8
+00:01:12,120 --> 00:01:24,000
+CALL-E asks only for factual status, missing items, the next procedural step, and an office reference tied to the exact synthetic permit case.
+
+9
+00:01:24,120 --> 00:01:36,000
+Accepted evidence binds the call ID, case, permit, exact destination, jurisdiction, snapshot hash, confidence, and recipient-side corroboration.
+
+10
+00:01:36,120 --> 00:01:46,000
+The authority boundary is load-bearing: a phone answer can open an exception, but it cannot approve a permit or overwrite municipal truth.
+
+11
+00:01:46,120 --> 00:01:57,000
+Wrong office, no consent, voicemail, ambiguity, low confidence, malformed output, or missing grounding fails closed and blocks blind redial.
+
+12
+00:01:57,120 --> 00:02:08,000
+CALL-E maintainers reviewed the implementation and merged pull request one ninety-nine into the official community repository.
+
+13
+00:02:08,120 --> 00:02:20,000
+The project passes fifty-three tests above a ninety-percent coverage gate, including the published SDK create-call and polling boundary.
+
+14
+00:02:20,120 --> 00:02:30,000
+The current reviewer paths are deterministic and clearly labeled. A real provider pilot will be claimed only after an authorized, consented validation succeeds.

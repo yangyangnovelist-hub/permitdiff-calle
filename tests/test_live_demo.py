@@ -41,6 +41,7 @@ def test_public_proof_is_privacy_safe_and_non_authoritative():
     proof = live_demo.public_proof(successful_result())
     assert proof["route"] == "discrepancy_detected"
     assert proof["decision"]["official_status_mutated"] is False
+    assert "not a government representative" in proof["recipient"]
     assert "+15555550123" not in json.dumps(proof)
 
 

@@ -56,6 +56,7 @@ def public_proof(result: dict[str, Any]) -> dict[str, Any]:
         "status": result.get("status"),
         "task_completed": result.get("task_completed"),
         "completion_confidence": result.get("completion_confidence"),
+        "recipient": "redacted consenting test role-player; not a government representative",
         "route": "discrepancy_detected",
         "decision": decision,
         "privacy": {
@@ -66,7 +67,8 @@ def public_proof(result: dict[str, Any]) -> dict[str, Any]:
         },
         "claim_boundary": (
             "Real CALL-E transport and PermitDiff discrepancy routing in a synthetic permit case; "
-            "the phone answer did not alter an official record."
+            "the recipient was a consenting role-player, and the phone answer did not alter an "
+            "official record."
         ),
     }
 
