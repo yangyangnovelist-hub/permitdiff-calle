@@ -1,0 +1,39 @@
+[project]
+name = "permitdiff-calle"
+version = "0.1.0"
+description = "Exception-first CALL-E permit record reconciliation"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = ["calle-ai==0.2.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<9", "pytest-cov>=5,<7", "ruff>=0.9,<1"]
+
+[project.scripts]
+permitdiff = "permitdiff.cli:main"
+permitdiff-web = "permitdiff.web:main"
+permitdiff-consented-live-demo = "permitdiff.live_demo:main"
+
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+permitdiff = ["operator.html"]
+
+[tool.pytest.ini_options]
+addopts = "-q --strict-markers"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

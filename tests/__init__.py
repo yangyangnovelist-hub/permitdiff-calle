@@ -1,0 +1,1 @@
+"""PermitDiff test suite."""

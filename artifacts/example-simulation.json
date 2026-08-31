@@ -1,0 +1,24 @@
+{
+  "mode": "simulate",
+  "creates_phone_call": false,
+  "scenario": "discrepancy",
+  "structured_result": {
+    "consented_after_ai_disclosure": "yes",
+    "right_permit_office": "yes",
+    "permit_reference_confirmed": "yes",
+    "phone_status": "correction_required",
+    "next_required_action": "Submit the requested corrections before review can continue.",
+    "missing_items_summary": "Correct the site plan setback labels.",
+    "agency_reference": "OFFICE-7421",
+    "evidence_summary": "The office stated the current status and supplied a reference."
+  },
+  "decision": {
+    "route": "discrepancy_detected",
+    "reason": "The phone evidence differs from the frozen portal status.",
+    "portal_status": "in_review",
+    "phone_status": "correction_required",
+    "official_status": "in_review",
+    "official_status_mutated": false,
+    "next_authority": "human_review"
+  }
+}

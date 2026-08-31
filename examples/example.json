@@ -1,0 +1,17 @@
+{
+  "case_id": "case-BL-2026-1842",
+  "permit_number": "BL-2026-1842",
+  "jurisdiction": "Example City",
+  "agency_name": "Example City Permit Office",
+  "agency_phone": "+15555550100",
+  "authorized_agency_contact": true,
+  "applicant_business_name": "Acme Construction",
+  "portal_status": "in_review",
+  "portal_updated_at_utc": "2026-08-25T08:00:00Z",
+  "checked_at_utc": "2026-08-30T08:00:00Z",
+  "portal_note": "Plan review is still in progress with no missing items shown.",
+  "freshness_window_hours": 48,
+  "conflict_flags": [],
+  "region": "US",
+  "locale": "en-US"
+}

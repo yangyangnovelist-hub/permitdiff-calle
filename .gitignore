@@ -1,0 +1,17 @@
+.venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+__pycache__/
+*.py[cod]
+*.egg-info/
+data/
+verify_shots/
+video/build/
+video/*.mp4
+artifacts/*
+!artifacts/.gitkeep
+!artifacts/example-preview.json
+!artifacts/example-simulation.json
+!artifacts/calle-live-no-answer.json
+!artifacts/consented-live-success.json
