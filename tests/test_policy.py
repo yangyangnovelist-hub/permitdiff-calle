@@ -219,3 +219,33 @@ def test_schema_and_recursive_redaction():
     assert "+15555550123" not in str(redacted)
     assert "me@example.com" not in str(redacted)
     assert "abc" not in str(redacted)
+
+
+@pytest.mark.parametrize("wrapped", [False, True], ids=["scalar", "score-object"])
+@pytest.mark.parametrize(
+    ("score", "accepted"),
+    [
+        pytest.param(float("nan"), False, id="nan"),
+        pytest.param(float("inf"), False, id="positive-infinity"),
+        pytest.param(float("-inf"), False, id="negative-infinity"),
+        pytest.param(1.01, False, id="above-probability-range"),
+        pytest.param(-0.01, False, id="below-probability-range"),
+        pytest.param(10**400, False, id="integer-overflow"),
+        pytest.param(True, False, id="boolean"),
+        pytest.param("0.95", False, id="numeric-string"),
+        pytest.param(None, False, id="missing-score"),
+        pytest.param({"score": None}, False, id="nested-missing-score"),
+        pytest.param(0, False, id="zero"),
+        pytest.param(0.799999, False, id="below-threshold"),
+        pytest.param(0.8, True, id="at-threshold"),
+        pytest.param(0.95, True, id="normal-confidence"),
+        pytest.param(1, True, id="one"),
+    ],
+)
+def test_provider_confidence_must_be_a_bounded_probability(score, accepted, wrapped):
+    request = parse_request(RAW)
+    response = provider(request)
+    response["completion_confidence"] = {"score": score, "label": "high"} if wrapped else score
+    decision = route_result(request, response, expected_call_id=response["id"])
+    assert decision["route"] == ("discrepancy_detected" if accepted else "outcome_unknown")
+    assert decision["official_status_mutated"] is False

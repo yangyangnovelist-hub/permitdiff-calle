@@ -136,15 +136,16 @@ def idempotency_key(case: PermitCase) -> str:
 
 
 def confidence_score(value: Any) -> float:
-    if isinstance(value, bool):
-        return 0.0
-    if isinstance(value, (int, float)):
-        return float(value)
+    """Accept only a finite probability; malformed confidence must fail closed."""
     if isinstance(value, dict):
-        score = value.get("score")
-        if isinstance(score, (int, float)) and not isinstance(score, bool):
-            return float(score)
-    return 0.0
+        value = value.get("score")
+    if (
+        isinstance(value, bool)
+        or not isinstance(value, (int, float))
+        or not 0 <= value <= 1
+    ):
+        return 0.0
+    return float(value)
 
 
 def valid_result(value: Any) -> bool:

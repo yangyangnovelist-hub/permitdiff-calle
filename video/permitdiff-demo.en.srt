@@ -48,7 +48,7 @@ CALL-E maintainers reviewed the implementation and merged pull request one ninet
 
 13
 00:02:08,120 --> 00:02:20,000
-The project passes fifty-three tests above a ninety-percent coverage gate, including the published SDK create-call and polling boundary.
+The project passes eighty-three tests above a ninety-percent coverage gate, including the published SDK create-call and polling boundary.
 
 14
 00:02:20,120 --> 00:02:30,000
